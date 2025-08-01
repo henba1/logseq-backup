@@ -1,0 +1,35 @@
+# Logseq Encrypted Backup Configuration Template
+# Copy this file to backup.conf and modify the values below
+
+# Path to your Logseq graph
+# Example: /home/username/Documents/logseq-graph
+LOGSQL_GRAPH_PATH="/path/to/your/logseq/graph"
+
+# GitHub repository URL for encrypted backups
+# Example: https://github.com/username/logseq-backup
+GITHUB_REPO_URL="https://github.com/username/logseq-backup"
+
+# GPG key ID or email for encryption/decryption
+# You can find your GPG key ID with: gpg --list-keys
+# Example: your-email@example.com or ABC123DEF456
+GPG_KEY_ID="your-gpg-key-id-or-email"
+
+# Optional: Backup frequency (in minutes, for cron jobs)
+# Default: 1440 (24 hours)
+# BACKUP_FREQUENCY=1440
+
+# Optional: Maximum log file age (in days)
+# Default: 30
+# MAX_LOG_AGE=30
+
+# Optional: Enable verbose logging
+# Default: false
+# VERBOSE_LOGGING=false
+
+# Optional: Custom git user name for commits
+# Default: "Logseq Backup"
+# GIT_USER_NAME="Logseq Backup"
+
+# Optional: Custom git user email for commits
+# Default: "backup@logseq.local"
+# GIT_USER_EMAIL="backup@logseq.local" 
