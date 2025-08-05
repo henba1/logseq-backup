@@ -134,14 +134,14 @@ perform_backup() {
         return 0
     fi
     
-    # Add all files
+    # Add all files (including deletions)
     log "INFO" "Adding files to git"
-    git add .
+    git add -A
     
-    # Commit changes
+    # Commit changes (without GPG signing)
     local commit_message="Logseq backup $(date '+%Y-%m-%d %H:%M:%S')"
     log "INFO" "Committing changes: $commit_message"
-    git commit -m "$commit_message"
+    git commit --no-gpg-sign -m "$commit_message"
     
     # Push to encrypted remote
     log "INFO" "Pushing to encrypted remote"

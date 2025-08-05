@@ -118,6 +118,23 @@ ls -la logs/
 tail -f logs/backup-*.log
 ```
 
+### Understanding Encrypted Repositories
+
+When using git-remote-gcrypt:
+
+1. **Unusual Dates in GitHub**: The GitHub interface may show commits with dates like "Dec 31, 2012" - this is normal and happens because the commit metadata is encrypted.
+
+2. **"root-commit"** in logs refers to the first commit in a repository, not the root user.
+
+3. **Viewing Encrypted Contents**: To view the contents of your encrypted repository:
+   ```bash
+   # Restore to a temporary location to view contents
+   ./scripts/restore.sh --target /tmp/logseq-view
+   
+   # Then browse the files
+   ls -la /tmp/logseq-view
+   ```
+
 ## Automated Backups
 
 The setup script configures a cron job for daily backups at midnight. To manage cron jobs:

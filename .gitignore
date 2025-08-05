@@ -1,2 +1,4 @@
 config/backup.conf
 *.txt
+logs/
+restored/
