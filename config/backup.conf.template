@@ -6,8 +6,8 @@
 LOGSQL_GRAPH_PATH="/path/to/your/logseq/graph"
 
 # GitHub repository URL for encrypted backups
-# Example: https://github.com/username/logseq-backup
-GITHUB_REPO_URL="https://github.com/username/logseq-backup"
+# Example: git@github.com:username/logseq-backup.git
+GITHUB_REPO_URL="git@github.com:username/logseq-backup.git"
 
 # GPG key ID or email for encryption/decryption
 # You can find your GPG key ID with: gpg --list-keys
@@ -32,4 +32,4 @@ GPG_KEY_ID="your-gpg-key-id-or-email"
 
 # Optional: Custom git user email for commits
 # Default: "backup@logseq.local"
-# GIT_USER_EMAIL="backup@logseq.local" 
+# GIT_USER_EMAIL="backup@logseq.local"

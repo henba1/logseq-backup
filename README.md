@@ -74,8 +74,8 @@ Edit `config/backup.conf` with your settings:
 # Path to your Logseq graph
 LOGSQL_GRAPH_PATH="/path/to/your/logseq/graph"
 
-# GitHub repository URL
-GITHUB_REPO_URL="https://github.com/username/logseq-backup"
+# GitHub repository URL (SSH format recommended)
+GITHUB_REPO_URL="git@github.com:username/logseq-backup.git"
 
 # GPG key ID or email
 GPG_KEY_ID="your-gpg-key-id-or-email"
@@ -137,7 +137,11 @@ crontab -r
 
 1. Create a new GitHub repository (e.g., `logseq-backup`)
 2. Make it private for additional security
-3. Add the repository URL to your configuration
+3. Add the SSH repository URL to your configuration:
+   ```
+   git@github.com:username/logseq-backup.git
+   ```
+4. Make sure your SSH key is set up with GitHub (see troubleshooting section)
 
 ## GPG Key Management
 
@@ -189,8 +193,22 @@ gpg --import private-key.asc
    ```
 
 4. **GitHub authentication issues**
-   - Ensure you have SSH keys set up for GitHub
-   - Or use HTTPS with personal access tokens
+   - Ensure you have SSH keys set up for GitHub:
+     ```bash
+     # Generate SSH key if you don't have one
+     ssh-keygen -t ed25519 -C "your-email@example.com"
+     
+     # Add key to SSH agent
+     eval "$(ssh-agent -s)"
+     ssh-add ~/.ssh/id_ed25519
+     
+     # Copy public key to clipboard (install xclip if needed)
+     cat ~/.ssh/id_ed25519.pub
+     # Then add to GitHub: Settings → SSH and GPG keys → New SSH key
+     
+     # Test connection
+     ssh -T git@github.com
+     ```
 
 ### Log Files
 

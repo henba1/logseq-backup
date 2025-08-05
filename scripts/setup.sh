@@ -129,7 +129,7 @@ create_config() {
     echo -e "${BLUE}Please provide the following information:${NC}"
     
     read -p "Path to your Logseq graph: " logseq_path
-    read -p "GitHub repository URL (e.g., https://github.com/username/logseq-backup): " github_url
+    read -p "GitHub repository URL (e.g., git@github.com:username/logseq-backup.git): " github_url
     read -p "GPG key email or ID: " gpg_key
     
     # Create config directory if it doesn't exist
